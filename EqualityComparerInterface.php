@@ -10,19 +10,21 @@
  */
 namespace Cubiche\Core\Equatable;
 
-use Cubiche\Core\Hashable\HashableInterface;
+use Cubiche\Core\Delegate\CallableInterface;
+use Cubiche\Core\Hashable\HashCoderInterface;
 
 /**
- * Equatable Interface.
+ * Equality Comparer interface.
  *
  * @author Karel Osorio Ramírez <osorioramirez@gmail.com>
  */
-interface EquatableInterface extends HashableInterface
+interface EqualityComparerInterface extends CallableInterface, HashCoderInterface
 {
     /**
-     * @param mixed $other
+     * @param mixed $a
+     * @param mixed $b
      *
      * @return bool
      */
-    public function equals($other);
+    public function equals($a, $b);
 }

@@ -10,19 +10,20 @@
  */
 namespace Cubiche\Core\Equatable;
 
-use Cubiche\Core\Hashable\HashableInterface;
+use Cubiche\Core\Hashable\Hashable;
 
 /**
- * Equatable Interface.
+ * Abstract Equatable class.
  *
  * @author Karel Osorio Ramírez <osorioramirez@gmail.com>
  */
-interface EquatableInterface extends HashableInterface
+abstract class Equatable extends Hashable implements EquatableInterface
 {
     /**
-     * @param mixed $other
-     *
-     * @return bool
+     * {@inheritdoc}
      */
-    public function equals($other);
+    public function equals($other)
+    {
+        return $this === $other;
+    }
 }
